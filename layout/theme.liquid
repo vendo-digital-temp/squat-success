@@ -23,6 +23,13 @@
   {%- if request.page_type == 'index' -%}{{ 'cover-art.webp' | asset_url | preload_tag: as: 'image', fetchpriority: 'high' }}{%- endif -%}
   {{ 'squat.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'squat.js' | asset_url }}" defer></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NJWRRMHT');</script>
+  <!-- End Google Tag Manager -->
 </head>
 <body class="template-{{ request.page_type | handle }}">
   <a class="skip-link" href="#MainContent">Skip to content</a>
@@ -33,5 +40,9 @@
   {% sections 'footer-group' %}
   {% render 'claim-modal' %}
   {% render 'outline-digits' %}
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJWRRMHT"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
